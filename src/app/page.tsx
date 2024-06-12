@@ -1,3 +1,5 @@
+import { Flex } from "@/styled-system/jsx";
+
 export default function Home() {
-  return <div>asda</div>;
+  return <Flex>Home</Flex>;
 }

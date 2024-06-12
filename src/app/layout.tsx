@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Polyfills } from "@/app/polyfills";
+import "./global.css";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +14,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <Polyfills />
+      </head>
+      <body>{children}</body>
     </html>
   );
 }

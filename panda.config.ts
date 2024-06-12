@@ -7,6 +7,7 @@ export default defineConfig({
   exclude: [],
   cssVarRoot: ":root",
   outdir: "src/styled-system",
+  jsxFramework: "react",
   theme: {
     extend: {},
   },
