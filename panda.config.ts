@@ -1,4 +1,4 @@
-import { defineConfig } from "@pandacss/dev";
+import { defineConfig, defineGlobalStyles } from "@pandacss/dev";
 
 export default defineConfig({
   minify: true,
@@ -8,6 +8,11 @@ export default defineConfig({
   cssVarRoot: ":root",
   outdir: "src/styled-system",
   jsxFramework: "react",
+  globalCss: defineGlobalStyles({
+    "& h1, & h2, & h3, & h4, & h5, & h6": {
+      textWrap: "unset",
+    },
+  }),
   theme: {
     extend: {
       breakpoints: {
