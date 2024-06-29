@@ -17,6 +17,7 @@
   "devDependencies": {
     "@pandacss/dev": "^0.40.1",
     "@svgr/webpack": "^8.1.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -29,12 +30,12 @@
     "eslint-plugin-import": "^2.29.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
-    "typescript": "^5",
     "lint-staged": "^15.2.5",
     "postcss": "^8.4.38",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-logical": "^7.0.1",
     "postcss-preset-env": "^9.5.14",
-    "postcss-supported-variables": "^1.0.1"
+    "postcss-supported-variables": "^1.0.1",
+    "typescript": "^5"
   }
 }

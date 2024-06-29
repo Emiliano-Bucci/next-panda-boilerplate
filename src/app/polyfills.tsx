@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 export function Polyfills() {
   return (
     <>
@@ -16,7 +18,7 @@ export function Polyfills() {
           __html: `String.prototype.replaceAll||(String.prototype.replaceAll=function(e,t){return"[object regexp]"===Object.prototype.toString.call(e).toLowerCase()?this.replace(e,t):this.replace(RegExp(e,"g"),t)});`,
         }}
       />
-      <script src="https://unpkg.com/web-streams-polyfill/dist/polyfill.js" />
+      <Script src="https://unpkg.com/web-streams-polyfill/dist/polyfill.js" />
     </>
   );
 }

@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
 import { Polyfills } from "@/app/polyfills";
+import type { Metadata } from "next";
+
 import "./global.css";
 
 export const metadata: Metadata = {
