@@ -37,5 +37,13 @@
     "postcss-preset-env": "^9.5.14",
     "postcss-supported-variables": "^1.0.1",
     "typescript": "^5"
-  }
+  },
+  "browserslist": [
+    "edge>=80",
+    "firefox>=80",
+    "chrome>=80",
+    "safari>=14",
+    "chromeAndroid>=80",
+    "iOS>=14"
+  ]
 }

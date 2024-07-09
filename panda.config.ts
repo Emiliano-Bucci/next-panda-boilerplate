@@ -1,8 +1,8 @@
 import { defineConfig, defineGlobalStyles } from "@pandacss/dev";
 
 export default defineConfig({
+  eject: true,
   minify: true,
-  preflight: true,
   include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
   exclude: [],
   cssVarRoot: ":root",
