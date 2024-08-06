@@ -1,6 +1,20 @@
 @layer reset, base, tokens, recipes, utilities;
 
 @layer reset {
+  /* Fallback for android devices */
+  @font-face {
+    font-family: "inter-android-fallback";
+    src: local("Roboto");
+    size-adjust: 105%;
+    ascent-override: 160.1173909%;
+    descent-override: 80.04108683%;
+    line-gap-override: 18.01173909%;
+  }
+
+  :root {
+    --transition: 240ms;
+  }
+
   /*
     1. Use a more-intuitive box-sizing model.
   */
@@ -45,6 +59,7 @@
   textarea,
   select {
     font: inherit;
+    appearance: none;
   }
   /*
   7. Avoid text overflows
@@ -58,16 +73,33 @@
   h6 {
     overflow-wrap: break-word;
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
   /*
   8. Create a root stacking context
 */
-  #root,
+
   #__next {
+    position: relative;
     isolation: isolate;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   html {
     font-size: 62.5%;
+  }
+  body[data-zag-scroll-lock] {
+    pointer-events: auto !important;
   }
   body {
     font-size: 1.6rem;
@@ -75,8 +107,10 @@
     width: 100%;
     max-width: 100%;
     display: flex;
+    position: relative;
     flex-direction: column;
     text-rendering: optimizeSpeed;
+    -webkit-overflow-scrolling: touch;
     line-height: 1.4;
     font-family:
       system-ui,

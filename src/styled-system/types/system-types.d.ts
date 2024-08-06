@@ -69,7 +69,7 @@ interface WithCss {
   css?: SystemStyleObject | SystemStyleObject[]
 }
 
-export type JsxStyleProps = SystemStyleObject & WithCss
+export type JsxStyleProps = WithCss
 
 export interface PatchedHTMLProps {
   htmlWidth?: string | number
@@ -83,6 +83,6 @@ export type OmittedHTMLProps = 'color' | 'translate' | 'transition' | 'width' | 
 type WithHTMLProps<T> = DistributiveOmit<T, OmittedHTMLProps> & PatchedHTMLProps
 
 export type JsxHTMLProps<T extends Record<string, any>, P extends Record<string, any> = {}> = Assign<
-  WithHTMLProps<T>,
+  T,
   P
 >
