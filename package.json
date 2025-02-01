@@ -15,7 +15,8 @@
     "eslint-config-next": "^15.1.6",
     "next": "15.1.6",
     "react": "^19",
-    "react-dom": "^19"
+    "react-dom": "^19",
+    "react-intersection-observer": "^9.15.1"
   },
   "devDependencies": {
     "@eslint/compat": "^1.2.6",
