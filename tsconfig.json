@@ -19,7 +19,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@/panda/*": ["./src/styled-system/*"],
+      "@/panda/*": ["./src/panda/*"],
       "@/icons/*": ["./public/icons/*"]
     }
   },

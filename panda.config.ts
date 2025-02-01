@@ -1,27 +1,19 @@
+import { panda_preset } from "@/theme/preset";
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
   eject: true,
   minify: true,
-  include: ["./src/**/*.{js,jsx,ts,tsx}", "./pages/**/*.{js,jsx,ts,tsx}"],
+  include: ["./src/**/*.{ts,tsx}", "./pages/**/*.{ts,tsx}"],
   exclude: [],
-  jsxStyleProps: "minimal",
+  jsxStyleProps: "none",
   cssVarRoot: ":root",
-  outdir: "src/styled-system",
+  outdir: "src/panda",
+  importMap: "@/panda",
   jsxFramework: "react",
-  presets: ["@pandacss/preset-base"],
-  theme: {
-    extend: {
-      breakpoints: {
-        base: "0px",
-        xxs: "340px",
-        xs: "600px",
-        md: "768px",
-        lg: "1024px",
-        lgx: "1280px",
-        lgxx: "1440px",
-        xl: "1600px",
-      },
-    },
+  presets: [panda_preset],
+  hash: {
+    className: true,
+    cssVar: false,
   },
 });
