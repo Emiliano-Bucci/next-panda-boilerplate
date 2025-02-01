@@ -1,4 +1,5 @@
 import { panda_preset } from "@/theme/preset";
+import { pluginRemoveFeatures } from "@pandabox/panda-plugins";
 import { defineConfig } from "@pandacss/dev";
 
 export default defineConfig({
@@ -12,6 +13,11 @@ export default defineConfig({
   importMap: "@/panda",
   jsxFramework: "react",
   presets: [panda_preset],
+  plugins: [
+    pluginRemoveFeatures({
+      features: ["no-jsx", "no-patterns", "no-sva", "no-styled"],
+    }),
+  ],
   hash: {
     className: true,
     cssVar: false,

@@ -6,7 +6,7 @@
     "dev": "rm -rf .next && npm run prepare && next dev",
     "build": "next build",
     "start": "next start",
-    "prepare": "panda codegen && npm run gen:icons",
+    "prepare": "rm -rf src/panda && panda codegen && npm run gen:icons",
     "lint": "npx eslint . --fix",
     "typecheck": "tsc --b",
     "gen:icons": "node ./scripts/generate-icon-mapping.js"
@@ -21,6 +21,7 @@
     "@eslint/compat": "^1.2.6",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
+    "@pandabox/panda-plugins": "^0.0.8",
     "@pandacss/dev": "^0.51.1",
     "@svgr/webpack": "^8.1.0",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
