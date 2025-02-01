@@ -1,10 +1,10 @@
 // eslint-disable-next-line
-const fs = require('fs');
+const fs = require("fs");
 // eslint-disable-next-line
-const path = require('path');
+const path = require("path");
 
 const iconsDir = path.join(__dirname, "../public/icons");
-const outputFile = path.join(__dirname, "../src/utils/icon-mapping.ts");
+const outputFile = path.join(__dirname, "../src/icon-mapping.ts");
 
 const icons = fs.readdirSync(iconsDir).filter((file) => file.endsWith(".svg"));
 
