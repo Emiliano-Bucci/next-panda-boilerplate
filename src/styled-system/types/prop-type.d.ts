@@ -8,12 +8,8 @@ export interface UtilityValues {
 	float: "start" | "end" | CssProperties["float"];
 	hideFrom: Tokens["breakpoints"];
 	hideBelow: Tokens["breakpoints"];
-	flexBasis: "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "full";
+	flexBasis: Tokens["sizes"] | "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "1/5" | "2/5" | "3/5" | "4/5" | "1/6" | "2/6" | "3/6" | "4/6" | "5/6" | "1/12" | "2/12" | "3/12" | "4/12" | "5/12" | "6/12" | "7/12" | "8/12" | "9/12" | "10/12" | "11/12" | "full";
 	flex: "1" | "auto" | "initial" | "none";
-	gridTemplateColumns: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12";
-	gridTemplateRows: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12";
-	gridColumn: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "full";
-	gridRow: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "full";
 	gridAutoColumns: "min" | "max" | "fr";
 	gridAutoRows: "min" | "max" | "fr";
 	marginLeft: "auto";
@@ -67,6 +63,7 @@ export interface UtilityValues {
 	translateY: "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "full" | "-1/2" | "-1/3" | "-2/3" | "-1/4" | "-2/4" | "-3/4" | "-full";
 	translateZ: "1/2" | "1/3" | "2/3" | "1/4" | "2/4" | "3/4" | "full" | "-1/2" | "-1/3" | "-2/3" | "-1/4" | "-2/4" | "-3/4" | "-full";
 	scrollbar: "visible" | "hidden";
+	scrollbarWidth: Tokens["sizes"];
 	scrollSnapType: "none" | "x" | "y" | "both";
 	scrollSnapStrictness: "mandatory" | "proximity";
 	srOnly: boolean;
@@ -76,12 +73,12 @@ export interface UtilityValues {
 
 
 
-type WithColorOpacityModifier<T> = T extends string ? `${T}/${string}` : T
+type WithColorOpacityModifier<T> = [T] extends [string] ? `${T}/${string}` & { __colorOpacityModifier?: true } : never
 
 type ImportantMark = "!" | "!important"
 type WhitespaceImportant = ` ${ImportantMark}`
 type Important = ImportantMark | WhitespaceImportant
-type WithImportant<T> = T extends string ? `${T}${Important}` & { __important?: true } : T;
+type WithImportant<T> = [T] extends [string] ? `${T}${Important}` & { __important?: true } : never
 
 /**
  * Only relevant when using `strictTokens` or `strictPropertyValues` in your config.
