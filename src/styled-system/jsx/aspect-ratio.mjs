@@ -1,15 +1,18 @@
-import { createElement, forwardRef } from 'react'
-import { mergeCss } from '../css/css.mjs';
-import { splitProps } from '../helpers.mjs';
-import { getAspectRatioStyle } from '../patterns/aspect-ratio.mjs';
-import { styled } from './factory.mjs';
+import { createElement, forwardRef } from "react";
 
-export const AspectRatio = /* @__PURE__ */ forwardRef(function AspectRatio(props, ref) {
-  const [patternProps, restProps] = splitProps(props, ["ratio"])
+import { mergeCss } from "../css/css.mjs";
+import { splitProps } from "../helpers.mjs";
+import { getAspectRatioStyle } from "../patterns/aspect-ratio.mjs";
+import { styled } from "./factory.mjs";
 
-const styleProps = getAspectRatioStyle(patternProps)
-const cssProps = { css: mergeCss(styleProps, props.css) }
-const mergedProps = { ref, ...restProps, ...cssProps }
+export const AspectRatio = /* @__PURE__ */ forwardRef(
+  function AspectRatio(props, ref) {
+    const [patternProps, restProps] = splitProps(props, ["ratio"]);
 
-return createElement(styled.div, mergedProps)
-  })
+    const styleProps = getAspectRatioStyle(patternProps);
+    const cssProps = { css: mergeCss(styleProps, props.css) };
+    const mergedProps = { ref, ...restProps, ...cssProps };
+
+    return createElement(styled.div, mergedProps);
+  },
+);

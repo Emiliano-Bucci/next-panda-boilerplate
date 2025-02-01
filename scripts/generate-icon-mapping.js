@@ -3,13 +3,13 @@ const fs = require('fs');
 // eslint-disable-next-line
 const path = require('path');
 
-const iconsDir = path.join(__dirname, '../public/icons');
-const outputFile = path.join(__dirname, '../src/utils/icon-mapping.ts');
+const iconsDir = path.join(__dirname, "../public/icons");
+const outputFile = path.join(__dirname, "../src/utils/icon-mapping.ts");
 
-const icons = fs.readdirSync(iconsDir).filter((file) => file.endsWith('.svg'));
+const icons = fs.readdirSync(iconsDir).filter((file) => file.endsWith(".svg"));
 
 const mapping = icons.reduce((acc, file) => {
-  const name = file.replace('.svg', '');
+  const name = file.replace(".svg", "");
   acc[name] = `@/icons/${file}`;
   return acc;
 }, {});
@@ -27,7 +27,7 @@ export const iconMapping = {
       ([key, value]) =>
         `"${key}": dynamic(() => import(/* webpackChunkName: "Icon-${key}" */ "${value}")),`,
     )
-    .join('\n  ')}
+    .join("\n  ")}
 };
 `;
 
