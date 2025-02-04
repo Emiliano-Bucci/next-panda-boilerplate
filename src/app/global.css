@@ -60,6 +60,7 @@
   select {
     font: inherit;
     appearance: none;
+    border-radius: 0px;
   }
   /*
   7. Avoid text overflows

@@ -1,6 +1,9 @@
 import { theme_breakpoints } from "@/theme/breakpoints";
+import { buttonRecipe } from "@/theme/button";
 import { definePreset } from "@pandacss/dev";
 import pandaBasePreset from "@pandacss/preset-base";
+
+import { textRecipe } from "./text";
 
 export const panda_preset = definePreset({
   name: "@/preset",
@@ -12,5 +15,9 @@ export const panda_preset = definePreset({
   },
   theme: {
     breakpoints: theme_breakpoints,
+    recipes: {
+      textRecipe,
+      buttonRecipe,
+    },
   },
 });
